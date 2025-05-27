@@ -1,0 +1,13 @@
+// Global object
+
+// console.log(global);
+
+
+// using a settimeout method from the global object
+setTimeout(() => {
+    console.log('in the timeout');
+}, 3000); // to run after 3 seconds
+
+const int = setInterval(() => {
+    console.log('in the interval');
+}, 1000); // to run at intervals of 1 second.
