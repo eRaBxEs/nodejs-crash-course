@@ -21,7 +21,20 @@ fs.writeFile('./docs/blog2.txt', 'hello, again', () => {
 });
 
 
-// directories
+// deleting a directory
+if (!fs.existsSync('./assets')) {// either creates or delete a folder
+    fs.mkdir('./assets', (err) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log('folder created');
+    });
+} else {
+    fs.rmdir('./assets', (err) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log('folder deleted');
+    });
+}
 
-
-// deleting files
