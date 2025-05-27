@@ -6,6 +6,7 @@
 // using a settimeout method from the global object
 setTimeout(() => {
     console.log('in the timeout');
+    clearInterval(int);
 }, 3000); // to run after 3 seconds
 
 const int = setInterval(() => {
