@@ -10,12 +10,23 @@ app.listen(3000);
 app.get('/', (req, res) => {
 
     // it infers the header information
-    res.send('<p>home page</p>');
+    // res.send('<p>home page</p>');
+    res.sendFile('./views/index.html', { root: __dirname });
 });
 
 
 app.get('/about', (req, res) => {
 
     // it infers the header information
-    res.send('<p>about page</p>');
+    res.sendFile('./views/about.html', { root: __dirname });
+
+});
+
+app.get('/about-us', (req, res) => {
+    res.redirect('/about');
+});
+
+// 404 page
+app.use((req, res) => { // these code should always be at the bottom
+    res.status(404).sendFile('./views/404.html', { root: __dirname });
 });
