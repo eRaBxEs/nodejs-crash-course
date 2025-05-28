@@ -4,7 +4,7 @@ const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
 
     // set header content type
-    res.setHeader('Content-ttype', 'test/plain');
+    res.setHeader('Content-type', 'text/plain');
 
     res.write('hello, ninjas');
     res.end();
