@@ -32,7 +32,7 @@ app.get('/blogs/create', (req, res) => {
     res.render('create', { title: 'Create' });
 });
 
-// 404 page
+// 404 page // mini basic middleware
 app.use((req, res) => { // these code should always be at the bottom
     res.status(404).render('404', { title: 'Home' });
 });
