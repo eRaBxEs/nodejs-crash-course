@@ -64,8 +64,20 @@ app.post('/blogs', (req, res) => {
         })
 });
 
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then(result => {
+            res.render('details', { blog: result, title: 'Blog Details' });
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+});
+
+
 app.get('/blogs/create', (req, res) => {
-    res.render('create', { title: 'Create' });
+    res.render('create', { title: 'Create a blog' });
 });
 
 // 404 page // mini basic middleware
