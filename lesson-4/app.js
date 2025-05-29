@@ -1,8 +1,16 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+
 
 // express app
 const app = express();
+
+// connect to mongodb
+const dbURI = 'mongodb://adminUser:yourStrongPassword@localhost:27017/yourDatabaseName?authSource=admin';
+mongoose.connect(dbURI)
+    .then(() => console.log('MongoDB connected successfully'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
 // reister view engines
 app.set('view engine', 'ejs');
